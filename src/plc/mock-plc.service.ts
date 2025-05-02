@@ -361,6 +361,15 @@ export class MockPlcService implements PlcServiceInterface {
     [PlcVariable.Var09]: false,
     [PlcVariable.Var10]: false,
 
+    [PlcVariable.Var39]: '',
+    [PlcVariable.Var40]: '',
+    [PlcVariable.Var41]: '',
+    [PlcVariable.Var42]: '',
+    [PlcVariable.Var43]: '',
+    [PlcVariable.Var44]: '',
+    [PlcVariable.Var45]: '',
+    [PlcVariable.Var46]: false,
+
     [PlcVariable.Var11]: true, // Required to be operational
     [PlcVariable.Var12]: true, // Required to be operational
     [PlcVariable.Var13]: false, // VMS team sets that
