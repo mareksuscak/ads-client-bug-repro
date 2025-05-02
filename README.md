@@ -1,5 +1,13 @@
 # ads-client bug reproduction
 
+```
+git clone https://github.com/mareksuscak/ads-client-bug-repro.git
+cd ads-client-bug-repro
+npm install
+# adjust PLC host in plc.config.ts
+npm run start
+```
+
 DUTs:
 
 ```
