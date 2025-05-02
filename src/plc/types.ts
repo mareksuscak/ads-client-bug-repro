@@ -85,6 +85,14 @@ export enum PlcVariable {
   Var36 = 'GVL_Remote.Var36',
   Var37 = 'GVL_Remote.Var37',
   Var38 = 'GVL_Remote.Var38',
+  Var39 = 'GVL_Remote.Var39',
+  Var40 = 'GVL_Remote.Var40',
+  Var41 = 'GVL_Remote.Var41',
+  Var42 = 'GVL_Remote.Var42',
+  Var43 = 'GVL_Remote.Var43',
+  Var44 = 'GVL_Remote.Var44',
+  Var45 = 'GVL_Remote.Var45',
+  Var46 = 'GVL_Remote.Var46',
 }
 
 export const PlcVariableDescriptions: Record<PlcVariable, string> = {
@@ -126,6 +134,14 @@ export const PlcVariableDescriptions: Record<PlcVariable, string> = {
   [PlcVariable.Var36]: 'Var36',
   [PlcVariable.Var37]: 'Var37',
   [PlcVariable.Var38]: 'Var38',
+  [PlcVariable.Var39]: 'Var39',
+  [PlcVariable.Var40]: 'Var40',
+  [PlcVariable.Var41]: 'Var41',
+  [PlcVariable.Var42]: 'Var42',
+  [PlcVariable.Var43]: 'Var43',
+  [PlcVariable.Var44]: 'Var44',
+  [PlcVariable.Var45]: 'Var45',
+  [PlcVariable.Var46]: 'Var46',
 };
 
 // This is an indexed list of all possible errors that can occur in the PLC.
