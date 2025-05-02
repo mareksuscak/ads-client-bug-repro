@@ -1,98 +1,231 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# ads-client bug reproduction
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+DUTs:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
-
-```bash
-$ npm install
+```
+TYPE ST_1 :
+STRUCT
+ AuthKey: STRING;
+ Cmd: STRING;
+ RequestingBayNumber: INT;
+END_STRUCT
+END_TYPE
 ```
 
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```
+TYPE ST_2 :
+STRUCT
+ Props1: STRING;
+ Prop2: STRING;
+ Prop3: INT;
+END_STRUCT
+END_TYPE
 ```
 
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+```
+TYPE ST_3 :
+STRUCT
+ Prop1: BYTE;
+ Prop2: WORD;
+ Prop3: STRING(20);
+ Prop4 : BYTE;
+   Prop5 : BYTE;
+END_STRUCT
+END_TYPE
 ```
 
-## Deployment
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+GVL_Remote:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
 ```
+{attribute 'qualified_only'}
+VAR_GLOBAL
+ Var01 : BOOL;
+ Var02 : BOOL;
+ Var03 : BOOL;
+ Var04 : BOOL;
+ Var05 : BOOL;
+ Var06 : BOOL;
+ Var07 : BOOL;
+ Var08 : BOOL;
+ Var09 : BOOL;
+ Var10 : BOOL;
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+ Var11 : BOOL := TRUE;
+ Var12 : BOOL := TRUE;
+ Var13 : BOOL;
+ Var14 : BOOL := TRUE;
+ Var15 : BOOL := TRUE;
+ Var16 : BOOL;
+ Var17 : BOOL;
 
-## Resources
+ Var39 : STRING(80);
+ Var40 : STRING(80);
+ Var41 : STRING(80);
+ Var42 : STRING(80);
+ Var43 : STRING(80);
+ Var44 : STRING(80);
+ Var45 : STRING(80);
+ Var46 : BOOL;
 
-Check out a few resources that may come in handy when working with NestJS:
+ Var20 : BOOL := TRUE;
+ Var21 : BOOL := TRUE;
+ Var22 : BOOL;
+ Var23 : BOOL;
+ Var24 : BOOL;
+ Var25 : BOOL;
+ Var26 : BOOL;
+ Var27 : BOOL;
+ Var28 : BOOL := TRUE;
+ Var29 : BOOL;
+ Var30 : BOOL;
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+ Var31 : ARRAY [0..293] OF BOOL;
 
-## Support
+ Var32 : BYTE;
+ Var33 : BYTE;
+ Var34 : BOOL;
+ Var35 : BOOL;
+ Var36 : BOOL;
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+ Var37: ST_1;
+ Var38: ST_2;
 
-## Stay in touch
+ Var19 : ARRAY [0..85] OF BYTE := [
+  255,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   255,
+   255,
+   0,
+   0
+ ];
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+ Var18: ARRAY[1..80] OF ST_3 := [
+  (Prop1 := 0, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '2002074531', Prop4 := 0, Prop5 := 1),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '2002294295', Prop4 := 0, Prop5 := 1),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '2002401360', Prop4 := 0, Prop5 := 1),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '2002462068', Prop4 := 0, Prop5 := 1),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '2002541941', Prop4 := 0, Prop5 := 1),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '2002558158', Prop4 := 0, Prop5 := 1),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '2002585832', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '2002593020', Prop4 := 0, Prop5 := 1),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 1, Prop2 := 2, Prop3 := '2002601417', Prop4 := 0, Prop5 := 1),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '20026170177', Prop4 := 0, Prop5 := 1),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4),
+  (Prop1 := 1, Prop2 := 1, Prop3 := 'CA1520977', Prop4 := 1, Prop5 := 1),
+  (Prop1 := 1, Prop2 := 1, Prop3 := '2002665335', Prop4 := 2, Prop5 := 1),
+  (Prop1 := 2, Prop2 := 0, Prop3 := '', Prop4 := 0, Prop5 := 4)
+    ];
 
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+END_VAR
+```
