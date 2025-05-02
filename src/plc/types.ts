@@ -33,12 +33,12 @@ export enum Enum5 {
   Val6 = 85,
 }
 
-export enum PalletIdentifier {
+export enum Enum6 {
   Val1 = 0,
   Val2 = 255,
 }
 
-export interface Pallet {
+export interface Enum7 {
   Prop1: Enum1;
   Prop2: Enum4;
   Prop3: string;

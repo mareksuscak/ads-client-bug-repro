@@ -8,7 +8,7 @@ import {
 } from 'ads-client';
 import { PlcConfig } from './plc.config';
 import {
-  Pallet,
+  Enum7,
   Enum4,
   Enum1,
   Enum3,
@@ -31,7 +31,7 @@ export class PlcService implements PlcServiceInterface {
       Prop5: Enum3.Val5,
       Prop4: Enum2.Val1,
       Prop3: 'Pallet Disabled',
-    } satisfies Pallet),
+    } satisfies Enum7),
 
     [PlcVariable.Var19]: Array(85)
       .fill(0)
@@ -85,11 +85,11 @@ export class PlcService implements PlcServiceInterface {
     [PlcVariable.Var35]: false,
     [PlcVariable.Var36]: false,
 
-    [PlcVariable.Var37]: { AuthKey: '', cmd: '', RequestingBayNumber: 0 },
+    [PlcVariable.Var37]: { Prop1: '', Prop2: '', Prop3: 0 },
     [PlcVariable.Var38]: {
-      AuthKey: '',
-      VinNumber: '',
-      RequestingBayNumber: 0,
+      Prop1: '',
+      Prop2: '',
+      Prop3: 0,
     },
   };
 

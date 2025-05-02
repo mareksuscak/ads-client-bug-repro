@@ -3,7 +3,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { PlcConfig } from './plc.config';
 import {
-  Pallet,
+  Enum7,
   Enum4,
   Enum1,
   Enum3,
@@ -19,7 +19,6 @@ export class MockPlcService implements PlcServiceInterface {
 
   private mockData: Record<PlcVariable, any> = {
     [PlcVariable.Var18]: [
-      // Floor 1
       {
         Prop1: Enum1.Val1,
         Prop2: Enum4.Val1,
@@ -48,7 +47,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-      // Floor 2
       {
         Prop1: Enum1.Val3,
         Prop2: Enum4.Val1,
@@ -77,7 +75,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-      // Floor 3
       {
         Prop1: Enum1.Val3,
         Prop2: Enum4.Val1,
@@ -106,7 +103,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '2002462068',
       },
-      // Floor 4
       {
         Prop1: Enum1.Val2,
         Prop2: Enum4.Val2,
@@ -135,7 +131,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-      // Floor 5
       {
         Prop1: Enum1.Val3,
         Prop2: Enum4.Val1,
@@ -164,7 +159,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-      // Floor 6
       {
         Prop1: Enum1.Val3,
         Prop2: Enum4.Val1,
@@ -193,7 +187,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '2002585832',
       },
-      // Floor 7
       {
         Prop1: Enum1.Val3,
         Prop2: Enum4.Val1,
@@ -222,7 +215,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-      // Floor 8
       {
         Prop1: Enum1.Val3,
         Prop2: Enum4.Val1,
@@ -251,7 +243,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-      // Floor 9
       {
         Prop1: Enum1.Val3,
         Prop2: Enum4.Val1,
@@ -280,7 +271,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-      // Floor 10
       {
         Prop1: Enum1.Val2,
         Prop2: Enum4.LongCar,
@@ -309,7 +299,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-      // Floor 11
       {
         Prop1: Enum1.Val3,
         Prop2: Enum4.Val1,
@@ -317,7 +306,6 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-      // Or an occupied pallet
       {
         Prop1: Enum1.Val2,
         Prop2: Enum4.Val2,
@@ -339,7 +327,7 @@ export class MockPlcService implements PlcServiceInterface {
         Prop4: Enum2.Val1,
         Prop3: '',
       },
-    ] satisfies Pallet[],
+    ] satisfies Enum7[],
 
     [PlcVariable.Var19]: [
       255, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
@@ -397,8 +385,8 @@ export class MockPlcService implements PlcServiceInterface {
     [PlcVariable.Var35]: false,
     [PlcVariable.Var36]: false,
 
-    [PlcVariable.Var37]: { AuthKey: '', cmd: '', RequestingBayNumber: 0 },
-    [PlcVariable.Var38]: { AuthKey: '', VinNumber: '', RequestingBayNumber: 0 },
+    [PlcVariable.Var37]: { Prop1: '', Prop2: '', Prop3: 0 },
+    [PlcVariable.Var38]: { Prop1: '', Prop2: '', Prop3: 0 },
   };
 
   constructor(private readonly config: PlcConfig) {
